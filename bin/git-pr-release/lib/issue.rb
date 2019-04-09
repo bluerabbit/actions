@@ -42,7 +42,7 @@ module Actions
     end
 
     def request(header = {})
-      header[:Authorization] = "token #{ENV["GIT_PR_RELEASE_TOKEN"]}"
+      header[:Authorization] = "token #{ENV["GITHUB_TOKEN"]}"
       uri                    = URI.parse(@json["url"])
 
       Net::HTTP.start(uri.host, uri.port, { use_ssl: true }) do |connection|
