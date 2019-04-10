@@ -3,6 +3,8 @@ $LOAD_PATH << File.dirname(__FILE__)
 require "json"
 require "issue"
 
+ENV["GIT_PR_RELEASE_TOKEN"] = ENV["GITHUB_TOKEN"] if ENV["GIT_PR_RELEASE_TOKEN"].nil?
+
 event_json = JSON.parse(File.read(ENV["GITHUB_EVENT_PATH"]))
 
 begin
