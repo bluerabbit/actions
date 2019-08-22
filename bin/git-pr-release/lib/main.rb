@@ -9,9 +9,6 @@ event_json = JSON.parse(File.read(ENV["GITHUB_EVENT_PATH"]))
 
 begin
   issue = Actions::Issue.new(event_json["issue"])
-  unless event_json["action"] == "opened" && issue.labels.include?(":octocat:git-pr-release")
-    exit 78 # github actions status is neutral
-  end
 
   skip_dot_version = issue.title == "git-pr-release"
   unless skip_dot_version || match_data = issue.title.match(/(?<version>\d+\.\d+\.\d+)$/)
