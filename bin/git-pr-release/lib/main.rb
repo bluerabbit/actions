@@ -9,9 +9,6 @@ event_json = JSON.parse(File.read(ENV["GITHUB_EVENT_PATH"]))
 
 begin
   issue = Actions::Issue.new(event_json["issue"])
-  unless event_json["action"] == "opened" && issue.labels.include?(":octocat:git-pr-release")
-    exit 78 # github actions status is neutral
-  end
 
   skip_dot_version = issue.title == "git-pr-release"
   unless skip_dot_version || match_data = issue.title.match(/(?<version>\d+\.\d+\.\d+)$/)
@@ -22,7 +19,7 @@ begin
   issue.comment ":hourglass_flowing_sand:Processing..."
 
   # update git remote url
-  system "git remote set-url origin https://${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+  system "git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 
   # update .version file
   # tag情報がないときはお試し用にgit-pr-releaseを実行できる
