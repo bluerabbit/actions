@@ -19,7 +19,7 @@ begin
   issue.comment ":hourglass_flowing_sand:Processing..."
 
   # update git remote url
-  system "git remote set-url origin https://${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+  system "git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 
   # update .version file
   # tag情報がないときはお試し用にgit-pr-releaseを実行できる
