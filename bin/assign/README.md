@@ -3,7 +3,7 @@
 ## Usage
 
 ```
-cat .github/workflows/auto_assign
+cat .github/workflows/auto_assign_action.yml
 ```
 
 ```workflow
