@@ -1,7 +1,7 @@
 $LOAD_PATH << File.dirname(__FILE__)
 
-require 'json'
-require 'octokit'
+require "json"
+require "octokit"
 
 client     = Octokit::Client.new(access_token: ENV["GITHUB_TOKEN"])
 event_json = JSON.parse(File.read(ENV["GITHUB_EVENT_PATH"]))

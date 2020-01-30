@@ -2,10 +2,6 @@
 
 ## Usage
 
-```
-cat .github/workflows/auto_assign_action.yml
-```
-
 ```workflow
 name: assign
 on:
@@ -13,13 +9,11 @@ on:
     types: [opened]
 
 jobs:
-  auto_assign:
+  assign:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
-        with:
-          fetch-depth: 1
+      - uses: actions/checkout@v2
       - uses: bluerabbit/actions/bin/assign@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
