@@ -1,0 +1,6 @@
+name: 'release-version'
+description: 'Update .version'
+author: 'bluerabbit'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
