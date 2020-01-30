@@ -1,8 +1,6 @@
-FROM ruby:2.6.1-alpine3.9
+FROM ruby:2-alpine
 
 RUN gem install octokit
 
 COPY lib /lib
-
-COPY entrypoint.sh /entrypoint.sh
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["ruby", "/lib/main.rb"]
