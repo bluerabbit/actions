@@ -2,20 +2,22 @@
 
 ## Usage
 
-```workflow
-workflow "Auto Rebase" {
-  on = "issue_comment"
-  resolves = "Rebase"
-}
+```yaml
+name: rebase
+on:
+  issue_comment:
+    types: [created]
 
-action "Rebase" {
-  uses    = "bluerabbit/actions/bin/rebase@v0.1"
-  secrets = ["GITHUB_TOKEN"]
-}
-```
+jobs:
+  rebase:
+    runs-on: ubuntu-latest
 
-## Example Output
-
-```
-...
+    steps:
+    - if: github.event.comment.body == '/rebase' && contains(github.event.comment.html_url, '/pull')
+      uses: actions/checkout@v1
+    - if: github.event.comment.body == '/rebase' && contains(github.event.comment.html_url, '/pull')
+      name: git rebase
+      uses: bluerabbit/actions/bin/rebase@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```

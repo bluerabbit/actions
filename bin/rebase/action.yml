@@ -1,0 +1,9 @@
+name: "rebase"
+description: "Run rebase"
+author: "bluerabbit"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+branding:
+  icon: "check-square"
+  color: "green"
