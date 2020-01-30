@@ -1,0 +1,6 @@
+name: 'assign-reviewers'
+description: 'Assign GitHub Pull Request reviewers'
+author: 'bluerabbit'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
