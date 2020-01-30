@@ -16,7 +16,7 @@ jobs:
       - if: contains(github.event.comment.body, '/version') && contains(github.event.comment.html_url, '/pull')
         uses: actions/checkout@v1
       - if: contains(github.event.comment.body, '/version') && contains(github.event.comment.html_url, '/pull')
-        uses: bluerabbit/actions/bin/release-version@master
+        uses: bluerabbit/actions/bin/release-version@v0.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GIT_AUTHOR_NAME: your_github_account
