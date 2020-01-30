@@ -1,0 +1,6 @@
+name: 'release-tag'
+description: 'git tag -a $(cat .version)'
+author: 'bluerabbit'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
