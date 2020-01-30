@@ -9,7 +9,7 @@ workflow "delete branch" {
 }
 
 action "delete branch" {
-  uses    = "bluerabbit/actions/bin/delete_branch@master"
+  uses    = "bluerabbit/actions/bin/delete_branch@v0.1"
   secrets = ["GITHUB_TOKEN"]
 }
 ```

@@ -9,7 +9,7 @@ workflow "git-pr-release flow" {
 }
 
 action "git-pr-release" {
-  uses    = "bluerabbit/actions/bin/git-pr-release@master"
+  uses    = "bluerabbit/actions/bin/git-pr-release@v0.1"
   secrets = ["GITHUB_TOKEN"]
   env     = {
     GIT_AUTHOR_NAME  = "your_name"

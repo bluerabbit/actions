@@ -9,7 +9,7 @@ workflow "Auto Rebase" {
 }
 
 action "Rebase" {
-  uses    = "bluerabbit/actions/bin/rebase@master"
+  uses    = "bluerabbit/actions/bin/rebase@v0.1"
   secrets = ["GITHUB_TOKEN"]
 }
 ```

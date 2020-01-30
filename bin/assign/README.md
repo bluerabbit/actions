@@ -20,7 +20,7 @@ jobs:
       - uses: actions/checkout@v1
         with:
           fetch-depth: 1
-      - uses: bluerabbit/actions/bin/assign@master
+      - uses: bluerabbit/actions/bin/assign@v0.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
