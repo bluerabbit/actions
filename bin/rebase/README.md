@@ -17,7 +17,7 @@ jobs:
       uses: actions/checkout@v1
     - if: github.event.comment.body == '/rebase' && contains(github.event.comment.html_url, '/pull')
       name: git rebase
-      uses: bluerabbit/actions/bin/rebase@v0.2
+      uses: bluerabbit/actions/bin/rebase@v0.3
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```

@@ -14,7 +14,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - uses: bluerabbit/actions/bin/assign-reviewers@master
+    - uses: bluerabbit/actions/bin/assign-reviewers@v0.3
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         REVIEWERS: "github_account1,github_account2,github_account3"
