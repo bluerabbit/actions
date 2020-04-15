@@ -9,7 +9,7 @@ on:
     types: [closed]
 
 jobs:
-  feature_branch:
+  delete_branch:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
