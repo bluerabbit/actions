@@ -1,0 +1,11 @@
+name: 'delete-branch'
+description: 'Automatically delete head branches'
+author: 'bluerabbit'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+inputs:
+  protected_branches:
+    description: 'Protected Branch'
+    required: false
+    default: 'master,develop'

@@ -16,4 +16,6 @@ jobs:
       - uses: bluerabbit/actions/bin/delete-branch@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          protected_branches: 'master,develop'
 ```
