@@ -1,5 +1,3 @@
-$LOAD_PATH << File.dirname(__FILE__)
-
 require "octokit"
 
 client     = Octokit::Client.new(access_token: ENV["GITHUB_TOKEN"])
