@@ -27,7 +27,7 @@ repo_name = "#{repo["owner"]["login"]}/#{repo["name"]}"
 begin
   pull_requests = client.pull_requests(repo_name, state: "open")
 
-  if pull_requests.any? {|pr| pr["base"]["ref"] == current_branch }
+  if pull_requests.any? {|pr| pr["base"]["ref"] == current_branch || pr["head"]["ref"] == current_branch }
     exit 0
   end
 
