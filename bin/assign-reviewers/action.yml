@@ -4,3 +4,12 @@ author: 'bluerabbit'
 runs:
   using: 'docker'
   image: 'Dockerfile'
+inputs:
+  reviewers:
+    description: 'User names of GitHub(csv)'
+    required: true
+    default: ''
+  reviewer_count:
+    description: 'Reviewer Count'
+    required: false
+    default: '1'
