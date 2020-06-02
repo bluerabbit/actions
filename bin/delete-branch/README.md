@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: bluerabbit/actions/bin/delete-branch@v0.4
+      - uses: bluerabbit/actions/bin/delete-branch@v0.5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:

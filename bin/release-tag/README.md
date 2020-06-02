@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: "git tag -a $(cat .version)"
-        uses: bluerabbit/actions/bin/release-tag@v0.4
+        uses: bluerabbit/actions/bin/release-tag@v0.5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GIT_AUTHOR_NAME: your_github_account

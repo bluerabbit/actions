@@ -15,5 +15,5 @@ begin
                                      reviewers: reviewers)
 rescue => ex
   puts ex.message
-  exit 1 # github actions status is failure
+  exit 78 # github actions status is always a success.
 end
