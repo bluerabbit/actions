@@ -14,7 +14,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: bluerabbit/actions/bin/assign@v0.5
+      - uses: bluerabbit/actions/bin/assign@v0.6
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
