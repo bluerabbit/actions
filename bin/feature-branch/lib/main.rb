@@ -8,5 +8,5 @@ prs = client.pull_requests(ENV["GITHUB_REPOSITORY"], query: { ref: current_pr.ba
 if parent_pr = prs.detect {|pr| pr.head.ref == current_pr.base.ref }
   client.update_pull_request(ENV["GITHUB_REPOSITORY"],
                              ENV["PULL_REQUEST_NUMBER"],
-                             body: "#{current_pr.body}\n\n## Base Branch\n\n- ##{parent_pr.number}")
+                             body: "#{current_pr.body}\n\n## Base Branch\n\n- #{current_pr.base.ref} ##{parent_pr.number}")
 end
